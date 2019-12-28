@@ -91,17 +91,17 @@ import React, { Component } from "react";
         this.toggle();
         if (item.id) {
           axios
-            .put(`https://cors-anywhere.herokuapp.com/http://localhost:8000/api/todos/${item.id}/`, item)
+            .put(`http://localhost:8000/api/todos/${item.id}/`, item)
             .then(res => this.refreshList());
           return;
         }
         axios
-          .post("https://cors-anywhere.herokuapp.com/http://localhost:8000/api/todos/", item)
+          .post("http://localhost:8000/api/todos/", item)
           .then(res => this.refreshList());
       };
       handleDelete = item => {
         axios
-          .delete(`https://cors-anywhere.herokuapp.com/http://localhost:8000/api/todos/${item.id}`)
+          .delete(`http://localhost:8000/api/todos/${item.id}`)
           .then(res => this.refreshList());
       };
       createItem = () => {
